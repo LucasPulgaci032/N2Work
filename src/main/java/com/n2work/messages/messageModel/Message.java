@@ -15,11 +15,12 @@ public class Message {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "subject")
-    private String subject;
+    @Column(name = "prompt", nullable = false)
+    private String prompt;
 
-    @Column(name = "message", nullable = false)
-    private String message;
+    @Column(name = "response")
+    private String response;
+
 
     @ManyToOne
     @JoinColumn(name = "user_id", nullable = false)

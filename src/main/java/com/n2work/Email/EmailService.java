@@ -20,7 +20,8 @@ public class EmailService {
         SimpleMailMessage message = new SimpleMailMessage();
         message.setTo(to);
         message.setSubject(messageDTO.subject());
-        message.setText(messageDTO.message());
+        message.setText(messageDTO.prompt());
+        message.setText(messageDTO.response());
         mailSender.send(message);
     }
 }
